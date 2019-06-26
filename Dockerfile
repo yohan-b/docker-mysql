@@ -9,7 +9,6 @@ RUN mv /etc/mysql/mariadb.conf.d/50-mysqld_safe.cnf /root/
 RUN mv /etc/mysql/mariadb.conf.d/50-server.cnf /root/
 RUN mv /etc/mysql/debian.cnf /root/
 COPY 50-server.cnf /etc/mysql/mariadb.conf.d/
-COPY debian.cnf /etc/mysql/
 ## Workaround for this mysqld_safe bug is not working : https://bugs.mysql.com/bug.php?id=57690
 ## We are no longer using mysqld_safe and mysqld no longer has this bug anyway.
 ## RUN ln -s /dev/stderr /tmp/errorlog.err
