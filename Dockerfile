@@ -1,7 +1,7 @@
 FROM debian:bookworm
 MAINTAINER yohan <783b8c87@scimetis.net>
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get -y install mysql-server
+RUN apt-get update && apt-get -y install mariadb-server
 RUN deluser mysql && addgroup --system --gid 120 mysql && adduser --no-create-home --system --uid 113 --ingroup mysql mysql
 RUN /usr/bin/install -m 755 -o mysql -g root -d /var/run/mysqld
 RUN chown -R mysql. /var/lib/mysql /run/mysqld
