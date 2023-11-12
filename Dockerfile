@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:bookworm
 MAINTAINER yohan <783b8c87@scimetis.net>
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get -y install mysql-server
