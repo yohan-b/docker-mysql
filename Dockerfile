@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get -y install mariadb-server rsync
 RUN deluser mysql && addgroup --system --gid 120 mysql && adduser --no-create-home --system --uid 113 --ingroup mysql mysql
 RUN /usr/bin/install -m 755 -o mysql -g root -d /var/run/mysqld
-RUN chown -R mysql. /var/lib/mysql /run/mysqld
+RUN chown -R mysql:mysql /var/lib/mysql /run/mysqld
 RUN mv /etc/mysql/mariadb.conf.d/50-mysqld_safe.cnf /root/
 RUN mv /etc/mysql/mariadb.conf.d/50-server.cnf /root/
 RUN mv /etc/mysql/debian.cnf /root/
